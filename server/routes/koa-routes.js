@@ -1,10 +1,10 @@
 import Router from 'koa-router'
-import indexCtrl from '../controllers/indexCtrl'
-import usersCtrl from '../controllers/usersCtrl'
+import state from '../controllers/stateCtrl'
+import howto from '../controllers/howtoCtrl'
 const router = new Router()
 router.prefix('/api')
-router.get('/', indexCtrl)
-router.post('/post', indexCtrl)
-router.get('/users', usersCtrl)
+
+router.get('/state', state)
+router.get('/howto', howto)
 
 export default router

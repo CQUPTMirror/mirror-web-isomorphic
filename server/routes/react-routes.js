@@ -2,6 +2,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
 import { Provider } from 'react-redux'
+import config from '../../config'
 import configureStore from '../../client/store/configureStore'
 const store = configureStore()
 
@@ -22,7 +23,7 @@ export default async (ctx, next) => {
       ctx.redirect(redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
       await ctx.render('index', {
-        title: 'React',
+        title: config.title,
         dev: ctx.app.env === 'development',
         reduxData: store.getState(),
         app: renderToString(<Provider store={store}>

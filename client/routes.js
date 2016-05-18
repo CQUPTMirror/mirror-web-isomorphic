@@ -1,12 +1,16 @@
 import App from './containers/App'
-import Picture from './components/Picture'
-import Counter from './containers/Counter'
-import { Route } from 'react-router'
+import HomeListPage from './containers/HomeList';
+import HomeHowtoPage from './containers/HomeHowto';
+import HomeStatusPage from './containers/HomeStatus';
+import EventsPage from './containers/Events';
+import { Route, IndexRoute } from 'react-router'
 import React from 'react'
 
 export default (
 <Route path="/" component={App}>
-  <Route path="picture" component={Picture} />
-  <Route path="counter" component={Counter} />
+  <IndexRoute component={HomeListPage} />
+  <Route path="/howto/:name" component={HomeHowtoPage} />
+  <Route path="/status" component={HomeStatusPage} />
+  <Route path="/events" component={EventsPage} />
 </Route>
 )
