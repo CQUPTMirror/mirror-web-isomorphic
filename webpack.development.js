@@ -48,12 +48,10 @@ module.exports = {
         }
       }, {
         test: /\.css$/,
-        // loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'postcss-loader')
         loader: 'style!css!postcss'
       }, {
         test: /\.less$/,
         include: includes,
-        // loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'postcss-loader', 'less-loader')
         loader: 'style!css!less!postcss'
       },
       { test: /\.woff2?$/, loader: 'url?limit=10000&minetype=application/font-woff' },

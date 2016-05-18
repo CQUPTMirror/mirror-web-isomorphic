@@ -4,6 +4,7 @@ var webpack = require('webpack')
 var path = require('path')
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var extractStyle = new ExtractTextPlugin('all.min.css')
 var rucksack = require('rucksack-css')
 var autoprefixer = require('autoprefixer')
 var fs = require('fs')
@@ -33,13 +34,18 @@ module.exports = [{
         exclude: /node_modules/,
         include: includes,
         loader: 'babel-loader'
-      }, {
+      },
+      // {
+      //   test: /\.(css|less)$/i,
+      //   loader: extractStyle.extract(['style', 'css', 'postcss', 'less'])
+      // },
+      {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'postcss-loader')
+        loader: extractStyle.extract(['css', 'postcss'])
       }, {
         test: /\.less$/,
         include: includes,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'less-loader', 'postcss-loader')
+        loader: extractStyle.extract(['css', 'less', 'postcss'])
       },
       { test: /\.woff2?$/, loader: 'url?limit=10000&minetype=application/font-woff' },
       { test: /\.ttf$/, loader: 'url?limit=10000&minetype=application/octet-stream' },
@@ -60,7 +66,7 @@ module.exports = [{
     extensions: ['', '.js', '.jsx']
   },
   plugins: [
-    new ExtractTextPlugin('all.min.css'),
+    extractStyle,
     new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
     new webpack.optimize.DedupePlugin(),
     new UglifyJsPlugin({
