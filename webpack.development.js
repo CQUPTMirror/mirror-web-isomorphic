@@ -3,9 +3,8 @@ var path = require('path')
 var rucksack = require('rucksack-css')
 var autoprefixer = require('autoprefixer')
 var includes = [
-  path.resolve(__dirname, 'client'),
-  path.resolve(__dirname, 'server'),
-  path.resolve(__dirname, 'config')
+  path.resolve(__dirname, 'app'),
+  path.resolve(__dirname, 'platforms')
 ]
 
 module.exports = {
@@ -14,7 +13,7 @@ module.exports = {
     // For old browsers
     'eventsource-polyfill',
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    './client/index.js'
+    './platforms/browser/index.js'
   ],
   output: {
     path: path.join(__dirname, '/public/static'),

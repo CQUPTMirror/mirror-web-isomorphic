@@ -1,5 +1,5 @@
 require('babel-core/register')
-var config = require('./config')
+var config = require('./platforms/common/config')
 var webpack = require('webpack')
 var path = require('path')
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
@@ -13,15 +13,14 @@ var nodeModules = fs.readdirSync('node_modules')
     return ['.bin', '.npminstall'].indexOf(i) === -1
   })
 var includes = [
-  path.resolve(__dirname, 'client'),
-  path.resolve(__dirname, 'server'),
-  path.resolve(__dirname, 'config')
+  path.resolve(__dirname, 'app'),
+  path.resolve(__dirname, 'platforms')
 ]
 
 module.exports = [{
   name: 'browser side render',
   devtool: 'cheap-source-map',
-  entry: ['./client/index.js'],
+  entry: ['./platform/browser/index.js'],
   output: {
     path: 'public/build',
     filename: '[name].js',
@@ -80,7 +79,7 @@ module.exports = [{
 }, {
   name: 'server side render',
   devtool: 'cheap-source-map',
-  entry: ['./server/index.js'],
+  entry: ['./platforms/server/index.js'],
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'index.js',
