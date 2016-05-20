@@ -8,7 +8,8 @@ import config from '../../common/config'
 
 const database = new Sequelize(config.db.database, config.db.username, config.db.password, {
   dialect: config.db.dialect,
-  storage: config.db.storage
+  storage: config.db.storage,
+  logging: false
 })
 
 export const Guides = database.define('guides', {
