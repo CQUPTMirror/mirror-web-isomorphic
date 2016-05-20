@@ -21,7 +21,6 @@ function fetchState() {
 }
 
 export function fetchStateIfNeeded (state) {
-  console.log(state)
   return (dispatch) => {
     if( !state.loaded ) {
       return dispatch(fetchState())

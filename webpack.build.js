@@ -20,7 +20,7 @@ var includes = [
 module.exports = [{
   name: 'browser side render',
   devtool: 'cheap-source-map',
-  entry: ['./platform/browser/index.js'],
+  entry: ['./platforms/browser/index.js'],
   output: {
     path: 'public/build',
     filename: '[name].js',
