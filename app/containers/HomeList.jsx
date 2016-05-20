@@ -39,7 +39,7 @@ class HomeListPage extends Component {
             dataIndex: 'lastUpdate',
             key: 'lastUpdate',
             render (timestamp) {
-              return <span>{!timestamp ? "-" : moment(timestamp * 1000).format('YYYY-MM-DD HH:mm')}</span>;
+              return <span>{!timestamp ? "-" : moment(+timestamp).format('YYYY-MM-DD HH:mm')}</span>;
             }
           }
         ]} />);

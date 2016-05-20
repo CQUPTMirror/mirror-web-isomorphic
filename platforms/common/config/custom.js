@@ -5,7 +5,7 @@
  */
 import path from 'path'
 
-const rootPath = path.join(__dirname, '..')
+const rootPath = path.join(__dirname, '../../..')
 export default {
   rootPath,
   publicPath: '/public',
@@ -13,9 +13,8 @@ export default {
   port: 3388,
   title: "重庆邮电大学 · 镜像源",
   db: {
-    host: 'localhost',
-    database: 'dbname',
-    username: 'root',
-    password: ''
+    dialect: 'sqlite',
+    database: 'main',
+    storage: path.join(rootPath, 'database.sqlite')
   }
 }
