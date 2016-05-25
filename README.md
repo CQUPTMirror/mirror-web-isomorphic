@@ -1,6 +1,18 @@
 # **mirror-web-isomorphic**
 
-重构ing
+react+koa2 同构的首页
+
+
+
+```bash
+git clone https://github.com/CQUPTMirror/mirror-web-isomorphic
+cd mirror-web-isomorphic
+npm i
+npm run build
+npm run production # or pm2
+```
+
+
 
 
 ## Contact
