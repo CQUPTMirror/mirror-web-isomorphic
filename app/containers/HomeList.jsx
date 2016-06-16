@@ -34,14 +34,14 @@ class HomeListPage extends Component {
             render (guideUrl) {
               return guideUrl ? <Link to={guideUrl}>Click</Link> : '-'
             }
-          }, {
+          }/*, {
             title: 'Last Update',
             dataIndex: 'lastUpdate',
             key: 'lastUpdate',
             render (timestamp) {
               return <span>{!timestamp ? "-" : moment(+timestamp).format('YYYY-MM-DD HH:mm')}</span>;
             }
-          }
+          }*/
         ]} />);
   }
 }
