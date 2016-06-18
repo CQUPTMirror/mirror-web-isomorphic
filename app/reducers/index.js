@@ -4,8 +4,10 @@
  * @Email i@zeroling.com
  */
 import { combineReducers } from 'redux'
-import mirror from './mirror'
+import mirror from './mirrorState'
+import server from './serverState'
 
 export default combineReducers({
-  mirror
+  mirror,
+  server
 })

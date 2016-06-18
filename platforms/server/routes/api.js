@@ -1,8 +1,10 @@
 import Router from 'koa-router'
-import state from '../controllers/stateCtrl'
+import mirrorState from '../controllers/stateCtrl'
+import serverState from '../controllers/serverCtrl'
 const router = new Router()
 router.prefix('/api')
 
-router.get('/state', state)
+router.get('/state', mirrorState)
+router.get('/server', serverState)
 
 export default router

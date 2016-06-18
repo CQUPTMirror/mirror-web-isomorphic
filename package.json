@@ -22,7 +22,9 @@
     "babel-runtime": "^6.6.1",
     "co": "^4.6.0",
     "debug": "^2.2.0",
+    "echarts": "^3.1.10",
     "ejs": "^2.4.1",
+    "element-resize-event": "^2.0.5",
     "eslint": "^2.9.0",
     "highlight.js": "^9.4.0",
     "isomorphic-fetch": "^2.2.1",
@@ -49,7 +51,8 @@
     "redux-thunk": "^2.1.0",
     "request-promise": "^3.0.0",
     "sequelize": "^3.23.2",
-    "sqlite3": "^3.1.4"
+    "sqlite3": "^3.1.4",
+    "vnstat-dumpdb": "^2.0.0"
   },
   "devDependencies": {
     "asset-require-hook": "^1.0.2",

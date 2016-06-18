@@ -4,7 +4,7 @@ import '../common/layout.less'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-import { fetchStateIfNeeded } from '../actions'
+import { fetchStateIfNeeded } from '../actions/mirrorState'
 import { connect } from 'react-redux'
 
 class App extends Component {
