@@ -17,6 +17,6 @@ npm run production # or pm2
 
 ## Contact
 
-[issues](https://github.com/17koa/koa2-startkit/issues)
+[issues](https://github.com/CQUPTMirror/mirror-web-isomorphic/issues)
 
 [@Ling](https://github.com/wssgcg1213)    
